@@ -10,7 +10,7 @@ db:
   tty: true
   
 odoo:
-  image: odoo:9
+  image: odoo:9.0
   links:
     - db:db
   ports:
