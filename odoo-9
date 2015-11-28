@@ -1,10 +1,17 @@
-web:
-  image: tutum/quickstart-python
-  links:
-    - "redis:redis"
-  ports:
-    - "5000:80"
-redis:
-  image: tutum/redis
+db:
+  image: postgres
   environment:
-    - REDIS_PASS=password
+    POSTGRES_USER: odoo
+    POSTGRES_PASSWORD: odoo
+  volumes:
+    - data:/var/lib/postgresql/data/
+
+odoo:
+  image: odoo:9
+  links:
+    - db:db
+  ports:
+    - "127.0.0.1:8069:8069" 
+  volumes:
+    - extra-addons:/mnt/extra-addons
+
