@@ -1,17 +1,22 @@
 db:
-  image: postgres
+  image: postgres:latest
   environment:
     POSTGRES_USER: odoo
     POSTGRES_PASSWORD: odoo
   volumes:
     - data:/var/lib/postgresql/data/
-
+    restart: always
+  stdin_open: true
+  tty: true
+  
 odoo:
   image: odoo:8
   links:
     - db:db
   ports:
-    - "127.0.0.1:8069:8069" 
+    - "127.0.0.1:80:8069" 
   volumes:
     - extra-addons:/mnt/extra-addons
-
+    restart: always
+  stdin_open: true
+  tty: true
