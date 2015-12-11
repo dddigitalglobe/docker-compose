@@ -3,13 +3,13 @@ sudo: required
 # blacklist
 branches:
   except:
-    - master
-    - develop
+    - 8.0
+    - 9.0
 
 # whitelist
 branches:
   only:
-    - travis
+    - master
 
 services:
   - docker
