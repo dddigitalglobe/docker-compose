@@ -3,9 +3,6 @@ db:
   environment:
     POSTGRES_USER: odoo
     POSTGRES_PASSWORD: odoo
-  volumes:
-    - data:/var/lib/postgresql/data/
-    restart: always
   stdin_open: true
   tty: true
   
