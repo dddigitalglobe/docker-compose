@@ -12,8 +12,5 @@ odoo:
     - db:db
   ports:
     - "127.0.0.1:80:8069" 
-  volumes:
-    - extra-addons:/mnt/extra-addons
-    restart: always
   stdin_open: true
   tty: true
