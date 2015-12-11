@@ -4,9 +4,10 @@ machine:
     - docker
 
 dependencies:
-  pre:
-    - pip install docker-compose
-
+  override:
+    - sudo pip install --upgrade docker-compose
 test:
   pre:
+    - docker-compose pull
     - docker-compose up -d
+
