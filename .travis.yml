@@ -1,0 +1,18 @@
+sudo: required
+
+# blacklist
+branches:
+  except:
+    - master
+    - develop
+
+# whitelist
+branches:
+  only:
+    - travis
+
+services:
+  - docker
+  
+script:
+  - docker-compose build
