@@ -5,11 +5,11 @@ branches:
   except:
     - 8.0
     - 9.0
-
+    - master
 # whitelist
 branches:
   only:
-    - master
+    - develop
 
 services:
   - docker
