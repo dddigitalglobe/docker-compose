@@ -20,6 +20,6 @@ before_install:
 - docker pull odoo
 
 script:
-- ./run "docker version && docker info"
-- ./run docker-compose build 
-- ./run docker-compose up
+- "docker version && docker info"
+- docker-compose build 
+- docker-compose up
