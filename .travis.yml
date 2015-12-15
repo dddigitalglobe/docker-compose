@@ -23,4 +23,4 @@ script:
 - "docker version && docker info"
 - docker-compose build 
 - docker-compose up
-- docker push dddigitalkglobe/dockercompose_odoo_1
+- "docker login -e='$DOCKER_EMAIL' -u='$DOCKER_USERNAME' -p='$DOCKER_PASSWORD' && docker push dddigitalglobe/dockercompose_odoo_1"
