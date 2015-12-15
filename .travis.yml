@@ -23,7 +23,7 @@ script:
 - "docker version && docker info"
 - docker-compose stop
 - docker-compose rm
-- docker-compose build -t dddigitalglobe/dockercompose_odoo_1 
+- docker-compose build -t dddigitalglobe/dockercompose_odoo_1 .
 - docker-compose up -d
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - docker push dddigitalglobe/dockercompose_odoo_1
