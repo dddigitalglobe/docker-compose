@@ -11,13 +11,13 @@ dependencies:
 
 test:
   override:
-    - docker run -d -p 80:8069 dockercompose_odoo_1/latest; sleep 10
+    - docker run -d -p 80:8069 dockercompose_odoo_1:latest; sleep 10
     - curl --retry 10 --retry-delay 5 -v http://localhost:80
 
 deployment:
   hub:
     branch: master
     commands:
-      - docker push dockercompose_db_1/latest
-      - docker push dockercompose_odoo_1/latest
+      - docker push dockercompose_db_1:latest
+      - docker push dockercompose_odoo_1:latest
 
