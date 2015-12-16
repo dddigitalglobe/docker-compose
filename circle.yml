@@ -2,25 +2,20 @@
 machine:
   services:
     - docker
-
 dependencies:
   override:
     - sudo pip install --upgrade docker-compose
-
+    - docker-compose build 
 test:
   override:
-    - docker-compose pull
-    - docker-compose build 
-    - docker-compose up -d 
-    #- docker-compose run -d -p 80:8069 dddigitalglobe/dockercompose_odoo_1; sleep 10
-    - curl --retry 10 --retry-delay 5 -v http://localhost:80
-
+    - docker run -d -p 9200:9200 dddigitalglobe/dd_odoo; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:9200
 deployment:
   hub:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push dddigitalglobe/dd_odoo
-
+      - docker push dddigitalglobe/dd_db
 
 
