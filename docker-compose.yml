@@ -1,5 +1,6 @@
 db:
   image: postgres:latest
+  container_name: dd_db
   environment:
     POSTGRES_USER: odoo
     POSTGRES_PASSWORD: odoo
@@ -8,6 +9,7 @@ db:
   
 odoo:
   image: odoo:latest
+  container_name: dd_odoo
   links:
     - db:db
   ports:
