@@ -11,7 +11,7 @@ odoo:
   build: odoo/
   container_name: dd_odoo
   links:
-    - db: dd_db
+    - db:dd_db
   ports:
     - "127.0.0.1:80:8069" 
   stdin_open: true
