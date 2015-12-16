@@ -14,7 +14,7 @@ deployment:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push dddigitalglobe/dd_odoo
-      - docker push dddigitalglobe/dd_db
+      - docker push dddigitalglobe/dockercompose_odoo
+      - docker push dddigitalglobe/dockercompose_db
 
 
