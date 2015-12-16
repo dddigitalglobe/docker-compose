@@ -8,7 +8,7 @@ dependencies:
     - docker-compose build 
 test:
   override:
-    - docker run -d -p 9200:9200 dddigitalglobe/dd_odoo; sleep 10
+    - docker run -d -p 9200:9200 dd_odoo; sleep 10
     - curl --retry 10 --retry-delay 5 -v http://localhost:9200
 deployment:
   hub:
