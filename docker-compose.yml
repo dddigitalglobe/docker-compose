@@ -1,5 +1,5 @@
 db:
-  image: postgres:latest
+  build: db/
   container_name: dd_db
   environment:
     POSTGRES_USER: odoo
@@ -8,7 +8,7 @@ db:
   tty: true
   
 odoo:
-  image: odoo:latest
+  build: odoo/
   container_name: dd_odoo
   links:
     - db:db
