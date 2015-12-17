@@ -2,6 +2,11 @@
 machine:
   services:
     - docker
+general:
+  branches:
+    only:
+      - master # list of branches to build
+      - develop
 dependencies:
   override:
     - sudo pip install --upgrade docker-compose
