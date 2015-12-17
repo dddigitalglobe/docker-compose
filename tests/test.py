@@ -1,9 +1,10 @@
 import sys
 import os
 
+
 def main():
     try:
-        print 'This is a fake test.'
+        print 'This is a fake test.\n'
         sys.exit(0)
     except:
         sys.exit(1)

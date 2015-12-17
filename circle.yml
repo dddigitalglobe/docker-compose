@@ -5,10 +5,12 @@ machine:
 dependencies:
   override:
     - sudo pip install --upgrade docker-compose
+    - sudo pip install --upgrade pep8 
     - docker-compose build 
 test:
   override:
     - docker-compose up -d; sleep 10
+    - pep8 --first tests/test.py
 deployment:
   hub:
     branch: master
