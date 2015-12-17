@@ -8,7 +8,7 @@ dependencies:
     - docker-compose build 
 test:
   override:
-    - docker-compose -d up; sleep 10
+    - docker-compose up -d; sleep 10
 deployment:
   hub:
     branch: master
