@@ -7,7 +7,7 @@ branches:
     - 8.0
     - 9.0
     - develop
-# whitelist
+## whitelist
 branches:
   only:
     - master
