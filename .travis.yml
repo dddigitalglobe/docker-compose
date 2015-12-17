@@ -21,8 +21,7 @@ before_install:
 
 script:
 - "docker version && docker info"
-- docker-compose stop
-- docker-compose rm
 - docker-compose build
+- ./build/build-docker-dev.sh
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-- docker push dddigitalglobe/dockercompose_odoo_1:latest
+- docker push dddigitalglobe/dockercompose_odoo
