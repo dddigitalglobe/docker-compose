@@ -17,6 +17,7 @@ deployment:
       - sudo ./build/build-docker-dev.sh
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push dddigitalglobe/dockercompose_odoo
-      - docker push dddigitalglobe/dockercompose_db
+      #- docker push dddigitalglobe/dockercompose_db
+      #need to pay to use a second repo
 
 
