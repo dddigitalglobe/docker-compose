@@ -8,12 +8,15 @@ dependencies:
     - docker-compose build 
 test:
   override:
-    - docker-compose -d up; sleep 10
+    - docker-compose up -d; sleep 10
 deployment:
   hub:
     branch: master
     commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS && docker push dddigitalglobe/dockercompose_odoo
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS && docker push dddigitalglobe/dockercompose_db
+      - chmod +x ./build/build-docker-dev.sh
+      - sudo ./build/build-docker-dev.sh
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push dddigitalglobe/dockercompose_odoo
+      - docker push dddigitalglobe/dockercompose_db
 
 
