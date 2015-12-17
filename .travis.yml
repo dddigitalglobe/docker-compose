@@ -1,6 +1,7 @@
 #.travis.yml
 sudo: required
-
+notifications:
+  slack: iip-foundations:qelvG0h8gO80cYsBV2vu7TPU
 # blacklist
 branches:
   except:
