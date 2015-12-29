@@ -20,6 +20,7 @@ test:
   override:
     - docker-compose up -d; sleep 10
     - pep8 --first tests/test.py
+    - nightwatch -t tests/nightwatch.json
 deployment:
   hub:
     branch: master
