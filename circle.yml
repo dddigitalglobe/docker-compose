@@ -13,6 +13,8 @@ dependencies:
     - sudo pip install --upgrade pep8 
     - docker-compose build 
 test:
+  pre:
+    - npm install --nightwatch
   override:
     - docker-compose up -d; sleep 10
     - pep8 --first tests/test.py
