@@ -1,4 +1,3 @@
-
 module.exports = {
   'Demo test Google' : function (client) {
     client
